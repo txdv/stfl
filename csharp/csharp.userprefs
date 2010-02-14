@@ -1,0 +1,28 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" ctype="Workspace" />
+  <MonoDevelop.Ide.DebuggingService>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Example/Main.cs" ctype="Workbench">
+    <Files>
+      <File FileName="Example/Main.cs" Line="29" Column="1" />
+      <File FileName="AssemblyInfo.cs" Line="1" Column="1" />
+      <File FileName="Form.cs" Line="1" Column="1" />
+      <File FileName="StflApi.cs" Line="17" Column="9" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Example" expanded="True" selected="True">
+            <Node name="References" expanded="True" />
+          </Node>
+          <Node name="Mono.Stfl" expanded="True" />
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <AuthorInfo Name="Andrius Bentkus" Email="ToXedVirus@gmail.com" Copyright="Andrius Bentkus" ctype="AuthorInformation" />
+</Properties>

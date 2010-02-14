@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mono.Stfl", "Mono.Stfl.csproj", "{6B3BF28C-2D22-414F-A2B4-6E33A35570EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Example\Example.csproj", "{CDA7290A-5B82-42F8-8F33-9B4BF66DF553}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B3BF28C-2D22-414F-A2B4-6E33A35570EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B3BF28C-2D22-414F-A2B4-6E33A35570EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B3BF28C-2D22-414F-A2B4-6E33A35570EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B3BF28C-2D22-414F-A2B4-6E33A35570EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDA7290A-5B82-42F8-8F33-9B4BF66DF553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDA7290A-5B82-42F8-8F33-9B4BF66DF553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDA7290A-5B82-42F8-8F33-9B4BF66DF553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDA7290A-5B82-42F8-8F33-9B4BF66DF553}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		version = 0.1
+		outputpath = .
+		StartupItem = Mono.Stfl.csproj
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = None
+		$1.ResourceNamePolicy = FileFormatDefault
+		$0.StandardHeader = $2
+		$2.inheritsSet = LGPLv2License
+		$0.TextStylePolicy = $3
+		$3.FileWidth = 120
+		$3.TabWidth = 4
+		$3.TabsToSpaces = True
+		$3.NoTabsAfterNonTabs = False
+		$3.RemoveTrailingWhitespace = False
+		$3.EolMarker = Native
+		$0.VersionControlPolicy = $4
+		$4.inheritsSet = Mono
+		$0.ChangeLogPolicy = $5
+		$5.UpdateMode = None
+		$5.MessageStyle = $6
+		$6.LineAlign = 0
+		$5.inheritsSet = Mono
+	EndGlobalSection
+EndGlobal
