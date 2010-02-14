@@ -20,23 +20,23 @@ using Mono.Stfl;
 
 public class MainApp
 {
-  public static void Main(string [] args)
-  {
-    Form f = new Form("<example.stfl>");
-    f["value_a"] = "Ačių jum (Lithuanian symbols!)";
-    f["value_b"] = "Test for STFL";
-
-
-    string ret = "";
-    while (ret != "ESC")
+    public static void Main(string [] args)
     {
-      ret = f.Run(500);
-    }
+        Form f = new Form("<example.stfl>");
+        f["value_a"] = "Ačių jum (Lithuanian symbols!)";
+        f["value_b"] = "Test for STFL";
         
-    Form.ResetConsole();
-    Console.WriteLine("A: {0}", f["value_a"]);
-    Console.WriteLine("B: {0}", f["value_b"]);
-    f.Dispose();
-  }
+
+        string ret = "";
+        while (ret != "ESC")
+        {
+          ret = f.Run(500);
+        }
+            
+        Form.ResetConsole();
+        Console.WriteLine("A: {0}", f["value_a"]);
+        Console.WriteLine("B: {0}", f["value_b"]);
+        f.Dispose();
+    }
 }
 

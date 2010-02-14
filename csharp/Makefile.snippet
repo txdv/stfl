@@ -20,15 +20,16 @@
 
 
 FILES = csharp/Form.cs csharp/StflApi.cs csharp/AssemblyInfo.cs
+EXAMPLE_FILES = csharp/Example/Main.cs
 SOLUTION = csharp/csharp.sln
 all: csharp/build_ok
 
 install: install_csharp
 
-csharp/build_ok: $(FILES) $(SOLUTION)
+csharp/build_ok: $(FILES) $(SOLUTION) $(EXAMPLE_FILES)
 	xbuild csharp/csharp.sln
 	
-	ln -s $(shell pwd)/libstfl.so.$(VERSION) $(shell pwd)/csharp/Example/libstfl.so
+	ln -fs $(shell pwd)/libstfl.so.$(VERSION) $(shell pwd)/csharp/Example/libstfl.so
 	touch csharp/build_ok
 
 install_csharp: csharp/build_ok
