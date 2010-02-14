@@ -27,30 +27,24 @@ namespace Mono.Stfl
 		
 		public Form(string text)
 		{
-			handleForm = StflApi.stfl_create(GetBytes(text));
+			handleForm = StflApi.stfl_create(text);
 		}
 		
 		public string this[string name]
 		{
 			get
 			{
-				IntPtr ptr = StflApi.stfl_get(handleForm, GetBytes(name));
-				string ret = UnixMarshal.PtrToString(ptr, Encoding.UTF32);
-				return ret;
+				return StflApi.stfl_get(handleForm, name);
 			}
 			set 
 			{
-				StflApi.stfl_set(handleForm, 
-				                 GetBytes(name),
-				                 GetBytes(value)
-				                 );
+				StflApi.stfl_set(handleForm, name, value);
 			}
 		}
-		
+        
 		public virtual string Run(int timeout)
 		{
-			IntPtr ptr = StflApi.stfl_run(handleForm, timeout);
-		    return UnixMarshal.PtrToString(ptr, Encoding.UTF32);
+			return StflApi.stfl_run(handleForm, timeout);
 		}
 		
         public virtual void Dispose()
@@ -60,12 +54,7 @@ namespace Mono.Stfl
 		
 		public void Modify(string name, string mode, string text)
         {
-			StflApi.stfl_modify(
-			                    handleForm,
-				                GetBytes(name),
-				                GetBytes(mode),
-								GetBytes(text)
-			                    );
+			StflApi.stfl_modify(handleForm, name , mode, text);
         }
 		
 		public static void ResetConsole()
@@ -73,15 +62,5 @@ namespace Mono.Stfl
 			StflApi.stfl_reset();
 		}
 		
-		
-		private byte[] GetBytes(string text)
-		{
-			byte[] textBytes = Encoding.UTF32.GetBytes(text);
-			// HACK: we pass wchar_t* to C in a byte[] which terminates the
-			// array using a single 0 byte, so we have to add 3 more
-			byte[] bytes = new byte[textBytes.Length + 3];
-			textBytes.CopyTo(bytes, 0);
-			return bytes;
-		}
 	}
 }

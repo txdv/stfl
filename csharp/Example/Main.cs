@@ -16,26 +16,36 @@
 // 
 
 using System;
+using System.IO;
 using Mono.Stfl;
 
 public class MainApp
 {
     public static void Main(string [] args)
     {
+        
         Form f = new Form("<example.stfl>");
         f["value_a"] = "Ačių jum (Lithuanian symbols!)";
         f["value_b"] = "Test for STFL";
         
+        StreamWriter sw = new StreamWriter(File.Open("debug.txt", FileMode.Create));
+        int i = 1;
 
         string ret = "";
         while (ret != "ESC")
         {
-          ret = f.Run(500);
+            ret = f.Run(500);
+            sw.WriteLine("{0}\t[{1}]", i, ret);
+            i++;
         }
+        
             
         Form.ResetConsole();
         Console.WriteLine("A: {0}", f["value_a"]);
         Console.WriteLine("B: {0}", f["value_b"]);
+        
+        sw.Close();
+        
         f.Dispose();
     }
 }
