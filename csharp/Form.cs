@@ -16,7 +16,9 @@
 // 
 
 using System;
+using System.IO;
 using System.Text;
+using System.Reflection;
 using Mono.Unix;
 
 namespace Mono.Stfl
@@ -30,6 +32,25 @@ namespace Mono.Stfl
 			handleForm = StflApi.stfl_create(text);
 		}
 		
+        public Form(Assembly assembly, string resourceName)
+        {
+            if (assembly == null) {
+                assembly = Assembly.GetCallingAssembly();
+            }
+
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            using (StreamReader reader = new StreamReader(stream)) {
+                if (stream == null) {
+                    throw new ArgumentException(resourceName + " could not be found in assembly", "resourceName");
+                }
+                string text = reader.ReadToEnd();
+                if (String.IsNullOrEmpty(text)) {
+                    throw new ArgumentException(resourceName + " in assembly is missing or empty.", "resourceName");
+                }
+                handleForm = StflApi.stfl_create(text);
+            }
+        }
+        
 		public string this[string name]
 		{
 			get
@@ -61,6 +82,16 @@ namespace Mono.Stfl
 		{
 			StflApi.stfl_reset();
 		}
+        
+        public string GetFocus()
+        {
+            return StflApi.stfl_get_focus(handleForm);
+        }
+        
+        public void SetFocus(string name)
+        {
+            StflApi.stfl_set_focus(handleForm, name);
+        }
 		
 	}
 }

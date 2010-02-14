@@ -28,8 +28,8 @@ install: install_csharp
 
 csharp/build_ok: $(FILES) $(SOLUTION) $(EXAMPLE_FILES)
 	xbuild csharp/csharp.sln
-	
 	ln -fs $(shell pwd)/libstfl.so.$(VERSION) $(shell pwd)/csharp/Example/libstfl.so
+	ln -fs $(shell pwd)/libstfl.so.$(VERSION) $(shell pwd)/csharp/Example2/libstfl.so
 	touch csharp/build_ok
 
 install_csharp: csharp/build_ok

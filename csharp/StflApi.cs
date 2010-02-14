@@ -29,6 +29,7 @@ namespace Mono.Stfl
 {
     internal class StflApi
     {
+        
         public static IntPtr ToUnixWideCharacters(string text)
         {
             if (text == null) {

@@ -24,13 +24,14 @@ public class MainApp
     public static void Main(string [] args)
     {
         
-        Form f = new Form("<example.stfl>");
+        Form f = new Form(null, "example.stfl");
         f["value_a"] = "Ačių jum (Lithuanian symbols!)";
         f["value_b"] = "Test for STFL";
         
         StreamWriter sw = new StreamWriter(File.Open("debug.txt", FileMode.Create));
         int i = 1;
 
+       
         string ret = "";
         while (ret != "ESC")
         {
@@ -38,7 +39,6 @@ public class MainApp
             sw.WriteLine("{0}\t[{1}]", i, ret);
             i++;
         }
-        
             
         Form.ResetConsole();
         Console.WriteLine("A: {0}", f["value_a"]);

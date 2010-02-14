@@ -1,0 +1,47 @@
+vbox
+  @style_normal:bg=blue
+  table
+    label
+      .colspan:2 .expand:0 .tie:c
+      text:"vCard Creator"
+    tablebr
+    label
+      .border:ltb .expand:0
+      text:"First Name: "
+    input[firstname]
+      .border:rtb .expand:h
+      style_normal:attr=underline
+      style_focus:fg=red,attr=underline
+      text[firstnametext]:
+    tablebr
+    label
+      .border:ltb .expand:0
+      text:"Last Name: "
+    input[lastname]
+      .border:rtb .expand:h
+      style_normal:attr=underline
+      style_focus:fg=red,attr=underline
+      text[lastnametext]:
+    tablebr
+    label
+      .border:ltb .expand:0
+      text:"Email Address: "
+    input[email]
+      .border:rtb .expand:h
+      style_normal:attr=underline
+      style_focus:fg=red,attr=underline
+      text[emailtext]:
+    tablebr
+    label
+      .border:ltb .expand:0
+      text:"Save to File: "
+    input[file]
+      .border:rtb .expand:h
+      style_normal:attr=underline
+      style_focus:fg=red,attr=underline
+      text[filetext]:
+    tablebr
+    label
+      .colspan:2 .expand:0 .tie:r
+      text[msg]:
+      

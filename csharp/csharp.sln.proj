@@ -22,6 +22,7 @@
       <SolutionConfiguration xmlns="">
         <ProjectConfiguration Project="{6B3BF28C-2D22-414F-A2B4-6E33A35570EC}">Debug|AnyCPU</ProjectConfiguration>
         <ProjectConfiguration Project="{CDA7290A-5B82-42F8-8F33-9B4BF66DF553}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{CA4F6009-F6C6-4AF9-9ABB-AF8335ADB8E0}">Debug|AnyCPU</ProjectConfiguration>
       </SolutionConfiguration>
     </CurrentSolutionConfigurationContents>
   </PropertyGroup>
@@ -30,6 +31,7 @@
       <SolutionConfiguration xmlns="">
         <ProjectConfiguration Project="{6B3BF28C-2D22-414F-A2B4-6E33A35570EC}">Release|AnyCPU</ProjectConfiguration>
         <ProjectConfiguration Project="{CDA7290A-5B82-42F8-8F33-9B4BF66DF553}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{CA4F6009-F6C6-4AF9-9ABB-AF8335ADB8E0}">Release|AnyCPU</ProjectConfiguration>
       </SolutionConfiguration>
     </CurrentSolutionConfigurationContents>
   </PropertyGroup>
@@ -70,16 +72,32 @@
     <MSBuild Projects="Example\Example.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
     <MSBuild Projects="Example\Example.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
   </Target>
+  <Target Name="Example2" Condition="'$(CurrentSolutionConfigurationContents)' != ''" DependsOnTargets="Mono.Stfl">
+    <MSBuild Projects="Example2\Example2.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Example2\Example2.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+  </Target>
+  <Target Name="Example2:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''" DependsOnTargets="Mono.Stfl:Clean">
+    <MSBuild Projects="Example2\Example2.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Example2\Example2.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+  </Target>
+  <Target Name="Example2:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" DependsOnTargets="Mono.Stfl:Rebuild">
+    <MSBuild Projects="Example2\Example2.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Example2\Example2.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+  </Target>
+  <Target Name="Example2:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''" DependsOnTargets="Mono.Stfl:Publish">
+    <MSBuild Projects="Example2\Example2.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="Example2\Example2.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+  </Target>
   <Target Name="Build" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
-    <CallTarget Targets="Mono.Stfl;Example" RunEachTargetSeparately="true" />
+    <CallTarget Targets="Mono.Stfl;Example;Example2" RunEachTargetSeparately="true" />
   </Target>
   <Target Name="Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
-    <CallTarget Targets="Mono.Stfl:Clean;Example:Clean" RunEachTargetSeparately="true" />
+    <CallTarget Targets="Mono.Stfl:Clean;Example:Clean;Example2:Clean" RunEachTargetSeparately="true" />
   </Target>
   <Target Name="Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
-    <CallTarget Targets="Mono.Stfl:Rebuild;Example:Rebuild" RunEachTargetSeparately="true" />
+    <CallTarget Targets="Mono.Stfl:Rebuild;Example:Rebuild;Example2:Rebuild" RunEachTargetSeparately="true" />
   </Target>
   <Target Name="Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
-    <CallTarget Targets="Mono.Stfl:Publish;Example:Publish" RunEachTargetSeparately="true" />
+    <CallTarget Targets="Mono.Stfl:Publish;Example:Publish;Example2:Publish" RunEachTargetSeparately="true" />
   </Target>
 </Project>

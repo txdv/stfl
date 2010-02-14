@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mono.Stfl", "Mono.Stfl.cspr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Example\Example.csproj", "{CDA7290A-5B82-42F8-8F33-9B4BF66DF553}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example2", "Example2\Example2.csproj", "{CA4F6009-F6C6-4AF9-9ABB-AF8335ADB8E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6B3BF28C-2D22-414F-A2B4-6E33A35570EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B3BF28C-2D22-414F-A2B4-6E33A35570EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B3BF28C-2D22-414F-A2B4-6E33A35570EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA4F6009-F6C6-4AF9-9ABB-AF8335ADB8E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA4F6009-F6C6-4AF9-9ABB-AF8335ADB8E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA4F6009-F6C6-4AF9-9ABB-AF8335ADB8E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA4F6009-F6C6-4AF9-9ABB-AF8335ADB8E0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CDA7290A-5B82-42F8-8F33-9B4BF66DF553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CDA7290A-5B82-42F8-8F33-9B4BF66DF553}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDA7290A-5B82-42F8-8F33-9B4BF66DF553}.Release|Any CPU.ActiveCfg = Release|Any CPU

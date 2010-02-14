@@ -21,7 +21,7 @@
 include Makefile.cfg
 
 export CC = gcc -pthread
-export CFLAGS += -I. -Wall -Os -ggdb -D_GNU_SOURCE -fPIC
+export CFLAGS += -I. -Wall -Os -ggdb -D_GNU_SOURCE -fPIC -fno-stack-protector
 export LDLIBS += -lncursesw
 
 SONAME  := libstfl.so.0
@@ -52,8 +52,8 @@ clean:
 	rm -f ruby/stfl.so ruby/build_ok Makefile.deps_new
 	rm -f stfl.pc libstfl.so libstfl.so.*
 	rm -f csharp/build_ok csharp/*dll csharp/*pidb csharp/*mdb 
-	rm -f csharp/Example/*mdb csharp/Example/*mdb csharp/Example/*dll csharp/Example/*exe csharp/Example/*so csharp/Example/*pidb
-	rm -rf csharp/obj csharp/Example/obj
+	rm -f csharp/Example*/*mdb csharp/Example*/*mdb csharp/Example*/*dll csharp/Example*/*exe csharp/Example*/*so csharp/Example*/*pidb
+	rm -rf csharp/obj csharp/Example*/obj
 
 Makefile.deps: *.c widgets/*.c *.h
 	$(CC) -I. -MM *.c > Makefile.deps_new
