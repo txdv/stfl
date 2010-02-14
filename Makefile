@@ -39,7 +39,7 @@ libstfl.a: public.o base.o parser.o dump.o style.o binding.o iconv.o \
 
 libstfl.so.$(VERSION): public.o base.o parser.o dump.o style.o binding.o iconv.o \
                        $(patsubst %.c,%.o,$(wildcard widgets/*.c))
-	$(CC) -shared -Wl,-soname,$(SONAME) -o $@ $^
+	$(CC) $(LDLIBS) -shared -Wl,-soname,$(SONAME) -o $@ $^
 
 clean:
 	rm -f libstfl.a example core core.* *.o Makefile.deps
@@ -51,6 +51,9 @@ clean:
 	rm -f ruby/Makefile ruby/stfl_wrap.c ruby/stfl_wrap.o
 	rm -f ruby/stfl.so ruby/build_ok Makefile.deps_new
 	rm -f stfl.pc libstfl.so libstfl.so.*
+	rm -f csharp/build_ok csharp/*dll csharp/*pidb csharp/*mdb
+	rm -f csharp/Example/*mdb csharp/Example/*mdb csharp/Example/*dll csharp/Example/*exe csharp/Example/*so
+	rm -rf csharp/obj csharp/Example/obj
 
 Makefile.deps: *.c widgets/*.c *.h
 	$(CC) -I. -MM *.c > Makefile.deps_new
@@ -84,6 +87,8 @@ endif
 ifeq ($(FOUND_SWIG)$(FOUND_RUBY),11)
 include ruby/Makefile.snippet
 endif
+
+include csharp/Makefile.snippet
 
 .PHONY: all clean install install_spl
 
